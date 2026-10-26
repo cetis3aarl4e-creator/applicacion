@@ -1,0 +1,12 @@
+{
+  "appId": "com.mihabitos.app",
+  "appName": "Hábitos",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1800,
+      "backgroundColor": "#0e1117",
+      "showSpinner": false
+    }
+  }
+}

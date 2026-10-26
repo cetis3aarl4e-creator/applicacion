@@ -1,0 +1,39 @@
+{
+  "name": "habit-tracker",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Rastreador de hábitos + agenda (PWA) con datos locales y sync opcional a Supabase",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:native": "tsc --noEmit && vite build --mode native",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "icons": "node scripts/gen-icons.mjs",
+    "cap:sync": "npm run build:native && cap sync android",
+    "cap:assets": "capacitor-assets generate --android",
+    "cap:open": "cap open android",
+    "apk": "npm run build:native && cap sync android && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.2.2",
+    "@capacitor/splash-screen": "^6.0.4",
+    "@supabase/supabase-js": "^2.45.0",
+    "dexie": "^4.0.8",
+    "dexie-react-hooks": "^1.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.2.2",
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.2.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.5",
+    "vite-plugin-pwa": "^0.21.1"
+  }
+}
